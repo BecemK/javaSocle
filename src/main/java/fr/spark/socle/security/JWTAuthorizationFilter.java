@@ -29,6 +29,7 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
 		String jwt= request.getHeader(SecurityParams.HEADER_STRING);
 		if(jwt==null || !jwt.startsWith(SecurityParams.TOKEN_PREFIX)) {
 			filterChain.doFilter(request, response);
+			return;
 		}
 		Claims claims= (Claims) Jwts.parser()
 				.setSigningKey(SecurityParams.SECRET)
