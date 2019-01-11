@@ -12,7 +12,6 @@ public class Produit {
 	private String produitName;
 	public Produit() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Produit(String produitName) {
 		super();
